@@ -24,8 +24,13 @@ class Chatbot:
         
         return response.content
 chatbot=Chatbot(
- model_name="meta/llama-3.3-70b-instruct",
- api_key="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"      
+ model_name="${model_name}",  # Replace with your model name
+  # e.g., "nvidia/llama2-7b-chat"
+  # You can also use "nvidia/llama2-13b-chat" or "nvidia/llama2-70b-chat" if you have access
+  # For example, "nvidia/llama2-7b-chat" is a smaller model that is faster and cheaper to run
+  # while "nvidia/llama2-70b-chat" is a larger model that is slower and more expensive to run
+  # but has better performance and quality.
+ api_key="${api_key}",  # Replace with your NVIDIA API key      
 )
 # Create Gradio interface
 with gr.Blocks() as demo:
